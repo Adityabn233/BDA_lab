@@ -1,0 +1,680 @@
+Script started on 2023-05-11 13:52:54+05:30 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="203" LINES="55"]
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hdfs fs dfs[K[K[K[K[K[K[K[Ks dfs -mkdir /abc
+[?2004lmkdir: `/abc': File exists
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hdfs dfs -mkdir /abc[C[K[Kdityab[K[K[K[K[K[K[Khh[Kfil[K[K[Kdir
+[?2004l[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hadoop;[K fs /
+[?2004l/: Unknown command
+Usage: hadoop fs [generic options]
+	[-appendToFile <localsrc> ... <dst>]
+	[-cat [-ignoreCrc] <src> ...]
+	[-checksum [-v] <src> ...]
+	[-chgrp [-R] GROUP PATH...]
+	[-chmod [-R] <MODE[,MODE]... | OCTALMODE> PATH...]
+	[-chown [-R] [OWNER][:[GROUP]] PATH...]
+	[-concat <target path> <src path> <src path> ...]
+	[-copyFromLocal [-f] [-p] [-l] [-d] [-t <thread count>] [-q <thread pool queue size>] <localsrc> ... <dst>]
+	[-copyToLocal [-f] [-p] [-crc] [-ignoreCrc] [-t <thread count>] [-q <thread pool queue size>] <src> ... <localdst>]
+	[-count [-q] [-h] [-v] [-t [<storage type>]] [-u] [-x] [-e] [-s] <path> ...]
+	[-cp [-f] [-p | -p[topax]] [-d] [-t <thread count>] [-q <thread pool queue size>] <src> ... <dst>]
+	[-createSnapshot <snapshotDir> [<snapshotName>]]
+	[-deleteSnapshot <snapshotDir> <snapshotName>]
+	[-df [-h] [<path> ...]]
+	[-du [-s] [-h] [-v] [-x] <path> ...]
+	[-expunge [-immediate] [-fs <path>]]
+	[-find <path> ... <expression> ...]
+	[-get [-f] [-p] [-crc] [-ignoreCrc] [-t <thread count>] [-q <thread pool queue size>] <src> ... <localdst>]
+	[-getfacl [-R] <path>]
+	[-getfattr [-R] {-n name | -d} [-e en] <path>]
+	[-getmerge [-nl] [-skip-empty-file] <src> <localdst>]
+	[-head <file>]
+	[-help [cmd ...]]
+	[-ls [-C] [-d] [-h] [-q] [-R] [-t] [-S] [-r] [-u] [-e] [<path> ...]]
+	[-mkdir [-p] <path> ...]
+	[-moveFromLocal [-f] [-p] [-l] [-d] <localsrc> ... <dst>]
+	[-moveToLocal <src> <localdst>]
+	[-mv <src> ... <dst>]
+	[-put [-f] [-p] [-l] [-d] [-t <thread count>] [-q <thread pool queue size>] <localsrc> ... <dst>]
+	[-renameSnapshot <snapshotDir> <oldName> <newName>]
+	[-rm [-f] [-r|-R] [-skipTrash] [-safely] <src> ...]
+	[-rmdir [--ignore-fail-on-non-empty] <dir> ...]
+	[-setfacl [-R] [{-b|-k} {-m|-x <acl_spec>} <path>]|[--set <acl_spec> <path>]]
+	[-setfattr {-n name [-v value] | -x name} <path>]
+	[-setrep [-R] [-w] <rep> <path> ...]
+	[-stat [format] <path> ...]
+	[-tail [-f] [-s <sleep interval>] <file>]
+	[-test -[defswrz] <path>]
+	[-text [-ignoreCrc] <src> ...]
+	[-touch [-a] [-m] [-t TIMESTAMP (yyyyMMdd:HHmmss) ] [-c] <path> ...]
+	[-touchz <path> ...]
+	[-truncate [-w] <length> <path> ...]
+	[-usage [cmd ...]]
+
+Generic options supported are:
+-conf <configuration file>        specify an application configuration file
+-D <property=value>               define a value for a given property
+-fs <file:///|hdfs://namenode:port> specify default filesystem URL to use, overrides 'fs.defaultFS' property from configurations.
+-jt <local|resourcemanager:port>  specify a ResourceManager
+-files <file1,...>                specify a comma-separated list of files to be copied to the map reduce cluster
+-libjars <jar1,...>               specify a comma-separated list of jar files to be included in the classpath
+-archives <archive1,...>          specify a comma-separated list of archives to be unarchived on the compute machines
+
+The general command line syntax is:
+command [genericOptions] [commandOptions]
+
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hdfs fs -ls/
+[?2004lERROR: fs is not COMMAND nor fully qualified CLASSNAME.
+Usage: hdfs [OPTIONS] SUBCOMMAND [SUBCOMMAND OPTIONS]
+
+  OPTIONS is none or any of:
+
+--buildpaths                       attempt to add class files from build tree
+--config dir                       Hadoop config directory
+--daemon (start|status|stop)       operate on a daemon
+--debug                            turn on shell script debug mode
+--help                             usage information
+--hostnames list[,of,host,names]   hosts to use in worker mode
+--hosts filename                   list of hosts to use in worker mode
+--loglevel level                   set the log4j level for this command
+--workers                          turn on worker mode
+
+  SUBCOMMAND is one of:
+
+
+    Admin Commands:
+
+cacheadmin           configure the HDFS cache
+crypto               configure HDFS encryption zones
+debug                run a Debug Admin to execute HDFS debug commands
+dfsadmin             run a DFS admin client
+dfsrouteradmin       manage Router-based federation
+ec                   run a HDFS ErasureCoding CLI
+fsck                 run a DFS filesystem checking utility
+haadmin              run a DFS HA admin client
+jmxget               get JMX exported values from NameNode or DataNode.
+oev                  apply the offline edits viewer to an edits file
+oiv                  apply the offline fsimage viewer to an fsimage
+oiv_legacy           apply the offline fsimage viewer to a legacy fsimage
+storagepolicies      list/get/set/satisfyStoragePolicy block storage policies
+
+    Client Commands:
+
+classpath            prints the class path needed to get the hadoop jar and the required libraries
+dfs                  run a filesystem command on the file system
+envvars              display computed Hadoop environment variables
+fetchdt              fetch a delegation token from the NameNode
+getconf              get config values from configuration
+groups               get the groups which users belong to
+lsSnapshottableDir   list all snapshottable dirs owned by the current user
+snapshotDiff         diff two snapshots of a directory or diff the current directory contents with a snapshot
+version              print the version
+
+    Daemon Commands:
+
+balancer             run a cluster balancing utility
+datanode             run a DFS datanode
+dfsrouter            run the DFS router
+diskbalancer         Distributes data evenly among disks on a given node
+httpfs               run HttpFS server, the HDFS HTTP Gateway
+journalnode          run the DFS journalnode
+mover                run a utility to move block replicas across storage types
+namenode             run the DFS namenode
+nfs3                 run an NFS version 3 gateway
+portmap              run a portmap service
+secondarynamenode    run the DFS secondary namenode
+sps                  run external storagepolicysatisfier
+zkfc                 run the ZK Failover Controller daemon
+
+SUBCOMMAND may print help when invoked w/o parameters or with -h.
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hdfs fs -ls/ /
+[?2004lERROR: fs is not COMMAND nor fully qualified CLASSNAME.
+Usage: hdfs [OPTIONS] SUBCOMMAND [SUBCOMMAND OPTIONS]
+
+  OPTIONS is none or any of:
+
+--buildpaths                       attempt to add class files from build tree
+--config dir                       Hadoop config directory
+--daemon (start|status|stop)       operate on a daemon
+--debug                            turn on shell script debug mode
+--help                             usage information
+--hostnames list[,of,host,names]   hosts to use in worker mode
+--hosts filename                   list of hosts to use in worker mode
+--loglevel level                   set the log4j level for this command
+--workers                          turn on worker mode
+
+  SUBCOMMAND is one of:
+
+
+    Admin Commands:
+
+cacheadmin           configure the HDFS cache
+crypto               configure HDFS encryption zones
+debug                run a Debug Admin to execute HDFS debug commands
+dfsadmin             run a DFS admin client
+dfsrouteradmin       manage Router-based federation
+ec                   run a HDFS ErasureCoding CLI
+fsck                 run a DFS filesystem checking utility
+haadmin              run a DFS HA admin client
+jmxget               get JMX exported values from NameNode or DataNode.
+oev                  apply the offline edits viewer to an edits file
+oiv                  apply the offline fsimage viewer to an fsimage
+oiv_legacy           apply the offline fsimage viewer to a legacy fsimage
+storagepolicies      list/get/set/satisfyStoragePolicy block storage policies
+
+    Client Commands:
+
+classpath            prints the class path needed to get the hadoop jar and the required libraries
+dfs                  run a filesystem command on the file system
+envvars              display computed Hadoop environment variables
+fetchdt              fetch a delegation token from the NameNode
+getconf              get config values from configuration
+groups               get the groups which users belong to
+lsSnapshottableDir   list all snapshottable dirs owned by the current user
+snapshotDiff         diff two snapshots of a directory or diff the current directory contents with a snapshot
+version              print the version
+
+    Daemon Commands:
+
+balancer             run a cluster balancing utility
+datanode             run a DFS datanode
+dfsrouter            run the DFS router
+diskbalancer         Distributes data evenly among disks on a given node
+httpfs               run HttpFS server, the HDFS HTTP Gateway
+journalnode          run the DFS journalnode
+mover                run a utility to move block replicas across storage types
+namenode             run the DFS namenode
+nfs3                 run an NFS version 3 gateway
+portmap              run a portmap service
+secondarynamenode    run the DFS secondary namenode
+sps                  run external storagepolicysatisfier
+zkfc                 run the ZK Failover Controller daemon
+
+SUBCOMMAND may print help when invoked w/o parameters or with -h.
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hdfs fs -ls /[C[C[C[C[C[Chdir
+[?2004lERROR: fs is not COMMAND nor fully qualified CLASSNAME.
+Usage: hdfs [OPTIONS] SUBCOMMAND [SUBCOMMAND OPTIONS]
+
+  OPTIONS is none or any of:
+
+--buildpaths                       attempt to add class files from build tree
+--config dir                       Hadoop config directory
+--daemon (start|status|stop)       operate on a daemon
+--debug                            turn on shell script debug mode
+--help                             usage information
+--hostnames list[,of,host,names]   hosts to use in worker mode
+--hosts filename                   list of hosts to use in worker mode
+--loglevel level                   set the log4j level for this command
+--workers                          turn on worker mode
+
+  SUBCOMMAND is one of:
+
+
+    Admin Commands:
+
+cacheadmin           configure the HDFS cache
+crypto               configure HDFS encryption zones
+debug                run a Debug Admin to execute HDFS debug commands
+dfsadmin             run a DFS admin client
+dfsrouteradmin       manage Router-based federation
+ec                   run a HDFS ErasureCoding CLI
+fsck                 run a DFS filesystem checking utility
+haadmin              run a DFS HA admin client
+jmxget               get JMX exported values from NameNode or DataNode.
+oev                  apply the offline edits viewer to an edits file
+oiv                  apply the offline fsimage viewer to an fsimage
+oiv_legacy           apply the offline fsimage viewer to a legacy fsimage
+storagepolicies      list/get/set/satisfyStoragePolicy block storage policies
+
+    Client Commands:
+
+classpath            prints the class path needed to get the hadoop jar and the required libraries
+dfs                  run a filesystem command on the file system
+envvars              display computed Hadoop environment variables
+fetchdt              fetch a delegation token from the NameNode
+getconf              get config values from configuration
+groups               get the groups which users belong to
+lsSnapshottableDir   list all snapshottable dirs owned by the current user
+snapshotDiff         diff two snapshots of a directory or diff the current directory contents with a snapshot
+version              print the version
+
+    Daemon Commands:
+
+balancer             run a cluster balancing utility
+datanode             run a DFS datanode
+dfsrouter            run the DFS router
+diskbalancer         Distributes data evenly among disks on a given node
+httpfs               run HttpFS server, the HDFS HTTP Gateway
+journalnode          run the DFS journalnode
+mover                run a utility to move block replicas across storage types
+namenode             run the DFS namenode
+nfs3                 run an NFS version 3 gateway
+portmap              run a portmap service
+secondarynamenode    run the DFS secondary namenode
+sps                  run external storagepolicysatisfier
+zkfc                 run the ZK Failover Controller daemon
+
+SUBCOMMAND may print help when invoked w/o parameters or with -h.
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hdfs fs -ls /hdir[1@d
+[?2004l[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hdfs dfs -ls /hdir[K[K[K[K
+[?2004lFound 5 items
+drwxr-xr-x   - hadoop supergroup          0 2023-05-06 10:27 /abc
+drwxr-xr-x   - hadoop supergroup          0 2023-05-08 09:47 /abc123
+drwxr-xr-x   - hadoop supergroup          0 2023-05-11 13:54 /hdir
+drwxr-xr-x   - hadoop supergroup          0 2023-05-04 13:00 /shabbu
+drwxr-xr-x   - hadoop supergroup          0 2023-05-06 10:34 /xyz
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hdfs dfs -ls /[1@=[1P[1P
+[?2004lERROR: fs is not COMMAND nor fully qualified CLASSNAME.
+Usage: hdfs [OPTIONS] SUBCOMMAND [SUBCOMMAND OPTIONS]
+
+  OPTIONS is none or any of:
+
+--buildpaths                       attempt to add class files from build tree
+--config dir                       Hadoop config directory
+--daemon (start|status|stop)       operate on a daemon
+--debug                            turn on shell script debug mode
+--help                             usage information
+--hostnames list[,of,host,names]   hosts to use in worker mode
+--hosts filename                   list of hosts to use in worker mode
+--loglevel level                   set the log4j level for this command
+--workers                          turn on worker mode
+
+  SUBCOMMAND is one of:
+
+
+    Admin Commands:
+
+cacheadmin           configure the HDFS cache
+crypto               configure HDFS encryption zones
+debug                run a Debug Admin to execute HDFS debug commands
+dfsadmin             run a DFS admin client
+dfsrouteradmin       manage Router-based federation
+ec                   run a HDFS ErasureCoding CLI
+fsck                 run a DFS filesystem checking utility
+haadmin              run a DFS HA admin client
+jmxget               get JMX exported values from NameNode or DataNode.
+oev                  apply the offline edits viewer to an edits file
+oiv                  apply the offline fsimage viewer to an fsimage
+oiv_legacy           apply the offline fsimage viewer to a legacy fsimage
+storagepolicies      list/get/set/satisfyStoragePolicy block storage policies
+
+    Client Commands:
+
+classpath            prints the class path needed to get the hadoop jar and the required libraries
+dfs                  run a filesystem command on the file system
+envvars              display computed Hadoop environment variables
+fetchdt              fetch a delegation token from the NameNode
+getconf              get config values from configuration
+groups               get the groups which users belong to
+lsSnapshottableDir   list all snapshottable dirs owned by the current user
+snapshotDiff         diff two snapshots of a directory or diff the current directory contents with a snapshot
+version              print the version
+
+    Daemon Commands:
+
+balancer             run a cluster balancing utility
+datanode             run a DFS datanode
+dfsrouter            run the DFS router
+diskbalancer         Distributes data evenly among disks on a given node
+httpfs               run HttpFS server, the HDFS HTTP Gateway
+journalnode          run the DFS journalnode
+mover                run a utility to move block replicas across storage types
+namenode             run the DFS namenode
+nfs3                 run an NFS version 3 gateway
+portmap              run a portmap service
+secondarynamenode    run the DFS secondary namenode
+sps                  run external storagepolicysatisfier
+zkfc                 run the ZK Failover Controller daemon
+
+SUBCOMMAND may print help when invoked w/o parameters or with -h.
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hadoop fs -ls /
+[?2004lFound 5 items
+drwxr-xr-x   - hadoop supergroup          0 2023-05-06 10:27 /abc
+drwxr-xr-x   - hadoop supergroup          0 2023-05-08 09:47 /abc123
+drwxr-xr-x   - hadoop supergroup          0 2023-05-11 13:54 /hdir
+drwxr-xr-x   - hadoop supergroup          0 2023-05-04 13:00 /shabbu
+drwxr-xr-x   - hadoop supergroup          0 2023-05-06 10:34 /xyz
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hadoop fs -ls /[C[1P/
+[?2004l-ls/: Unknown command
+Usage: hadoop fs [generic options]
+	[-appendToFile <localsrc> ... <dst>]
+	[-cat [-ignoreCrc] <src> ...]
+	[-checksum [-v] <src> ...]
+	[-chgrp [-R] GROUP PATH...]
+	[-chmod [-R] <MODE[,MODE]... | OCTALMODE> PATH...]
+	[-chown [-R] [OWNER][:[GROUP]] PATH...]
+	[-concat <target path> <src path> <src path> ...]
+	[-copyFromLocal [-f] [-p] [-l] [-d] [-t <thread count>] [-q <thread pool queue size>] <localsrc> ... <dst>]
+	[-copyToLocal [-f] [-p] [-crc] [-ignoreCrc] [-t <thread count>] [-q <thread pool queue size>] <src> ... <localdst>]
+	[-count [-q] [-h] [-v] [-t [<storage type>]] [-u] [-x] [-e] [-s] <path> ...]
+	[-cp [-f] [-p | -p[topax]] [-d] [-t <thread count>] [-q <thread pool queue size>] <src> ... <dst>]
+	[-createSnapshot <snapshotDir> [<snapshotName>]]
+	[-deleteSnapshot <snapshotDir> <snapshotName>]
+	[-df [-h] [<path> ...]]
+	[-du [-s] [-h] [-v] [-x] <path> ...]
+	[-expunge [-immediate] [-fs <path>]]
+	[-find <path> ... <expression> ...]
+	[-get [-f] [-p] [-crc] [-ignoreCrc] [-t <thread count>] [-q <thread pool queue size>] <src> ... <localdst>]
+	[-getfacl [-R] <path>]
+	[-getfattr [-R] {-n name | -d} [-e en] <path>]
+	[-getmerge [-nl] [-skip-empty-file] <src> <localdst>]
+	[-head <file>]
+	[-help [cmd ...]]
+	[-ls [-C] [-d] [-h] [-q] [-R] [-t] [-S] [-r] [-u] [-e] [<path> ...]]
+	[-mkdir [-p] <path> ...]
+	[-moveFromLocal [-f] [-p] [-l] [-d] <localsrc> ... <dst>]
+	[-moveToLocal <src> <localdst>]
+	[-mv <src> ... <dst>]
+	[-put [-f] [-p] [-l] [-d] [-t <thread count>] [-q <thread pool queue size>] <localsrc> ... <dst>]
+	[-renameSnapshot <snapshotDir> <oldName> <newName>]
+	[-rm [-f] [-r|-R] [-skipTrash] [-safely] <src> ...]
+	[-rmdir [--ignore-fail-on-non-empty] <dir> ...]
+	[-setfacl [-R] [{-b|-k} {-m|-x <acl_spec>} <path>]|[--set <acl_spec> <path>]]
+	[-setfattr {-n name [-v value] | -x name} <path>]
+	[-setrep [-R] [-w] <rep> <path> ...]
+	[-stat [format] <path> ...]
+	[-tail [-f] [-s <sleep interval>] <file>]
+	[-test -[defswrz] <path>]
+	[-text [-ignoreCrc] <src> ...]
+	[-touch [-a] [-m] [-t TIMESTAMP (yyyyMMdd:HHmmss) ] [-c] <path> ...]
+	[-touchz <path> ...]
+	[-truncate [-w] <length> <path> ...]
+	[-usage [cmd ...]]
+
+Generic options supported are:
+-conf <configuration file>        specify an application configuration file
+-D <property=value>               define a value for a given property
+-fs <file:///|hdfs://namenode:port> specify default filesystem URL to use, overrides 'fs.defaultFS' property from configurations.
+-jt <local|resourcemanager:port>  specify a ResourceManager
+-files <file1,...>                specify a comma-separated list of files to be copied to the map reduce cluster
+-libjars <jar1,...>               specify a comma-separated list of jar files to be included in the classpath
+-archives <archive1,...>          specify a comma-separated list of archives to be unarchived on the compute machines
+
+The general command line syntax is:
+command [genericOptions] [commandOptions]
+
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hadoop fs -ls/ /
+[?2004lFound 5 items
+drwxr-xr-x   - hadoop supergroup          0 2023-05-06 10:27 /abc
+drwxr-xr-x   - hadoop supergroup          0 2023-05-08 09:47 /abc123
+drwxr-xr-x   - hadoop supergroup          0 2023-05-11 13:54 /hdir
+drwxr-xr-x   - hadoop supergroup          0 2023-05-04 13:00 /shabbu
+drwxr-xr-x   - hadoop supergroup          0 2023-05-06 10:34 /xyz
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hdfs f[Kdfs -put
+[?2004l-put: Not enough arguments: expected 1 but got 0
+Usage: hadoop fs [generic options]
+	[-appendToFile <localsrc> ... <dst>]
+	[-cat [-ignoreCrc] <src> ...]
+	[-checksum [-v] <src> ...]
+	[-chgrp [-R] GROUP PATH...]
+	[-chmod [-R] <MODE[,MODE]... | OCTALMODE> PATH...]
+	[-chown [-R] [OWNER][:[GROUP]] PATH...]
+	[-concat <target path> <src path> <src path> ...]
+	[-copyFromLocal [-f] [-p] [-l] [-d] [-t <thread count>] [-q <thread pool queue size>] <localsrc> ... <dst>]
+	[-copyToLocal [-f] [-p] [-crc] [-ignoreCrc] [-t <thread count>] [-q <thread pool queue size>] <src> ... <localdst>]
+	[-count [-q] [-h] [-v] [-t [<storage type>]] [-u] [-x] [-e] [-s] <path> ...]
+	[-cp [-f] [-p | -p[topax]] [-d] [-t <thread count>] [-q <thread pool queue size>] <src> ... <dst>]
+	[-createSnapshot <snapshotDir> [<snapshotName>]]
+	[-deleteSnapshot <snapshotDir> <snapshotName>]
+	[-df [-h] [<path> ...]]
+	[-du [-s] [-h] [-v] [-x] <path> ...]
+	[-expunge [-immediate] [-fs <path>]]
+	[-find <path> ... <expression> ...]
+	[-get [-f] [-p] [-crc] [-ignoreCrc] [-t <thread count>] [-q <thread pool queue size>] <src> ... <localdst>]
+	[-getfacl [-R] <path>]
+	[-getfattr [-R] {-n name | -d} [-e en] <path>]
+	[-getmerge [-nl] [-skip-empty-file] <src> <localdst>]
+	[-head <file>]
+	[-help [cmd ...]]
+	[-ls [-C] [-d] [-h] [-q] [-R] [-t] [-S] [-r] [-u] [-e] [<path> ...]]
+	[-mkdir [-p] <path> ...]
+	[-moveFromLocal [-f] [-p] [-l] [-d] <localsrc> ... <dst>]
+	[-moveToLocal <src> <localdst>]
+	[-mv <src> ... <dst>]
+	[-put [-f] [-p] [-l] [-d] [-t <thread count>] [-q <thread pool queue size>] <localsrc> ... <dst>]
+	[-renameSnapshot <snapshotDir> <oldName> <newName>]
+	[-rm [-f] [-r|-R] [-skipTrash] [-safely] <src> ...]
+	[-rmdir [--ignore-fail-on-non-empty] <dir> ...]
+	[-setfacl [-R] [{-b|-k} {-m|-x <acl_spec>} <path>]|[--set <acl_spec> <path>]]
+	[-setfattr {-n name [-v value] | -x name} <path>]
+	[-setrep [-R] [-w] <rep> <path> ...]
+	[-stat [format] <path> ...]
+	[-tail [-f] [-s <sleep interval>] <file>]
+	[-test -[defswrz] <path>]
+	[-text [-ignoreCrc] <src> ...]
+	[-touch [-a] [-m] [-t TIMESTAMP (yyyyMMdd:HHmmss) ] [-c] <path> ...]
+	[-touchz <path> ...]
+	[-truncate [-w] <length> <path> ...]
+	[-usage [cmd ...]]
+
+Generic options supported are:
+-conf <configuration file>        specify an application configuration file
+-D <property=value>               define a value for a given property
+-fs <file:///|hdfs://namenode:port> specify default filesystem URL to use, overrides 'fs.defaultFS' property from configurations.
+-jt <local|resourcemanager:port>  specify a ResourceManager
+-files <file1,...>                specify a comma-separated list of files to be copied to the map reduce cluster
+-libjars <jar1,...>               specify a comma-separated list of jar files to be included in the classpath
+-archives <archive1,...>          specify a comma-separated list of archives to be unarchived on the compute machines
+
+The general command line syntax is:
+command [genericOptions] [commandOptions]
+
+Usage: hadoop fs [generic options] -put [-f] [-p] [-l] [-d] [-t <thread count>] [-q <thread pool queue size>] <localsrc> ... <dst>
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hdfs dfs -put /home/downloads/WC#[K3.txt /hdir/WCcopied.txt
+[?2004lput: `/home/downloads/WC3.txt': No such file or directory
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hdfs dfs -put /home/downloads/WC3.txt /hdir/WCcopied.txt[1P[1@D
+[?2004lput: `/home/Downloads/WC3.txt': No such file or directory
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hdfs dfs -put /home/Downloads/WC3.txt /hdir/WCcopied.txt[1P[1@H
+[?2004lput: `/Home/Downloads/WC3.txt': No such file or directory
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hdfs dfs -put /Home/Downloads/WC3.txt /hdir/WCcopied.txt[C[C[C[C[1P[1P[1P[1P[1P[1P[1@c[1@u[1@m[1@e[1@n[1@t[C[C[C[C[C[C[C[C[C[1P /hdir/WCcopied.txt[1P /hdir/WCcopied.txt[1P /hdir/WCcopied.txt[1P /hdir/WCcopied.txt[1P /hdir/WCcopied.txt[1P /hdir/WCcopied.txt[1P /hdir/WCcopied.txtv /hdir/WCcopied.txta /hdir/WCcopied.txtr /hdir/WCcopied.txti /hdir/WCcopied.txtu /hdir/WCcopied.txtn /hdir/WCcopied.txt[1P /hdir/WCcopied.txt[1P /hdir/WCcopied.txt[1P /hdir/WCcopied.txtu /hdir/WCcopied.txtn /hdir/WCcopied.txtn /hdir/WCcopied.txtu /hdir/WCcopied.txtr /hdir/WCcopied.txts /hdir/WCcopied.txt[1P /hdir/WCcopied.txt[1P /hdir/WCcopied.txt[1P /hdir/WCcopied.txt[1P /hdir/WCcopied.txtu /hdir/WCcopied.txtr /hdir/WCcopied.txts /hdir/WCcopied.txt/ /hdir/WCcopied.txtf /hdir/WCcopied.txti /hdir/WCcopied.txtl /hdir/WCcopied.txte /hdir/WCcopied.txt1 /hdir/WCcopied.txt
+[?2004lput: `/Home/Documents/varunurs/file1': No such file or directory
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hdfs dfs -put /Home/Documents/varunurs/file1 /hdir/WCcopied.txt[1P[1P[1P[1P[1P[1P[1P[1P[1P[1@h[1@a[1@d[1@o[1@o[1@p[C[C[C[C[C[C[C[C[C[1P[C[C[C[C[C[C[1P /hdir/WCcopied.txt[1P /hdir/WCcopied.txt[1P /hdir/WCcopied.txt[1P /hdir/WCcopied.txt[1P /hdir/WCcopied.txt[1P /hdir/WCcopied.txt/ /hdir/WCcopied.txt[1@s[CN /hdir/WCcopied.txtN /hdir/WCcopied.txt[1P /hdir/WCcopied.txtO /hdir/WCcopied.txtT /hdir/WCcopied.txtI /hdir/WCcopied.txtC /hdir/WCcopied.txtE /hdir/WCcopied.txt. /hdir/WCcopied.txtt /hdir/WCcopied.txtx /hdir/WCcopied.txtt /hdir/WCcopied.txt
+[?2004lput: `/Home/hadoop/varunurs/NOTICE.txt': No such file or directory
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hdfs dfs -put /Home/hadoop/varunurs/NOTICE.txt /hdir/WCcopied.txt[1P[1P[1P[1P[1P[1P[1P[1P[1P
+[?2004lput: `/Home/hadoop/NOTICE.txt': No such file or directory
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hdfs dfs -put /Home/hadoop/NOTICE.txt /hdir/WCcopied.txt[9@varunurs/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[2PDocuments/varunurs/file1[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[7Pwnloads/WC3.txt[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kls[K[Khadoop fs -/s /
+[?2004l-/s: Unknown command
+Usage: hadoop fs [generic options]
+	[-appendToFile <localsrc> ... <dst>]
+	[-cat [-ignoreCrc] <src> ...]
+	[-checksum [-v] <src> ...]
+	[-chgrp [-R] GROUP PATH...]
+	[-chmod [-R] <MODE[,MODE]... | OCTALMODE> PATH...]
+	[-chown [-R] [OWNER][:[GROUP]] PATH...]
+	[-concat <target path> <src path> <src path> ...]
+	[-copyFromLocal [-f] [-p] [-l] [-d] [-t <thread count>] [-q <thread pool queue size>] <localsrc> ... <dst>]
+	[-copyToLocal [-f] [-p] [-crc] [-ignoreCrc] [-t <thread count>] [-q <thread pool queue size>] <src> ... <localdst>]
+	[-count [-q] [-h] [-v] [-t [<storage type>]] [-u] [-x] [-e] [-s] <path> ...]
+	[-cp [-f] [-p | -p[topax]] [-d] [-t <thread count>] [-q <thread pool queue size>] <src> ... <dst>]
+	[-createSnapshot <snapshotDir> [<snapshotName>]]
+	[-deleteSnapshot <snapshotDir> <snapshotName>]
+	[-df [-h] [<path> ...]]
+	[-du [-s] [-h] [-v] [-x] <path> ...]
+	[-expunge [-immediate] [-fs <path>]]
+	[-find <path> ... <expression> ...]
+	[-get [-f] [-p] [-crc] [-ignoreCrc] [-t <thread count>] [-q <thread pool queue size>] <src> ... <localdst>]
+	[-getfacl [-R] <path>]
+	[-getfattr [-R] {-n name | -d} [-e en] <path>]
+	[-getmerge [-nl] [-skip-empty-file] <src> <localdst>]
+	[-head <file>]
+	[-help [cmd ...]]
+	[-ls [-C] [-d] [-h] [-q] [-R] [-t] [-S] [-r] [-u] [-e] [<path> ...]]
+	[-mkdir [-p] <path> ...]
+	[-moveFromLocal [-f] [-p] [-l] [-d] <localsrc> ... <dst>]
+	[-moveToLocal <src> <localdst>]
+	[-mv <src> ... <dst>]
+	[-put [-f] [-p] [-l] [-d] [-t <thread count>] [-q <thread pool queue size>] <localsrc> ... <dst>]
+	[-renameSnapshot <snapshotDir> <oldName> <newName>]
+	[-rm [-f] [-r|-R] [-skipTrash] [-safely] <src> ...]
+	[-rmdir [--ignore-fail-on-non-empty] <dir> ...]
+	[-setfacl [-R] [{-b|-k} {-m|-x <acl_spec>} <path>]|[--set <acl_spec> <path>]]
+	[-setfattr {-n name [-v value] | -x name} <path>]
+	[-setrep [-R] [-w] <rep> <path> ...]
+	[-stat [format] <path> ...]
+	[-tail [-f] [-s <sleep interval>] <file>]
+	[-test -[defswrz] <path>]
+	[-text [-ignoreCrc] <src> ...]
+	[-touch [-a] [-m] [-t TIMESTAMP (yyyyMMdd:HHmmss) ] [-c] <path> ...]
+	[-touchz <path> ...]
+	[-truncate [-w] <length> <path> ...]
+	[-usage [cmd ...]]
+
+Generic options supported are:
+-conf <configuration file>        specify an application configuration file
+-D <property=value>               define a value for a given property
+-fs <file:///|hdfs://namenode:port> specify default filesystem URL to use, overrides 'fs.defaultFS' property from configurations.
+-jt <local|resourcemanager:port>  specify a ResourceManager
+-files <file1,...>                specify a comma-separated list of files to be copied to the map reduce cluster
+-libjars <jar1,...>               specify a comma-separated list of jar files to be included in the classpath
+-archives <archive1,...>          specify a comma-separated list of archives to be unarchived on the compute machines
+
+The general command line syntax is:
+command [genericOptions] [commandOptions]
+
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hadoop fs -/s /[1P[1@l
+[?2004lFound 5 items
+drwxr-xr-x   - hadoop supergroup          0 2023-05-06 10:27 /abc
+drwxr-xr-x   - hadoop supergroup          0 2023-05-08 09:47 /abc123
+drwxr-xr-x   - hadoop supergroup          0 2023-05-11 13:54 /hdir
+drwxr-xr-x   - hadoop supergroup          0 2023-05-04 13:00 /shabbu
+drwxr-xr-x   - hadoop supergroup          0 2023-05-06 10:34 /xyz
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hadoop fs -ls //[C[C[Cdfs dfs -put /Home/hadoop/NOTICE.txt /hdir/WCcopied.txt[1P[1P[1P[1P[1@D[1@o[1@v[1P[1@c[1@u[1@m[1@e[1@n[1@t[1@s[C[C[C[C[C[C[C[1P[1P[1P[1P[1P[1P[1@a[1@d[1@i[1@t[1@y[1@a[C[C[C[C[C[C[C[C[C[C[C[1P /hdir/WCcopied.txt[1P /hdir/WCcopied.txt[1P /hdir/WCcopied.txt[1P /hdir/WCcopied.txt[1P /hdir/WCcopied.txt[1P /hdir/WCcopied.txt[1P /hdir/WCcopied.txt[1P /hdir/WCcopied.txt[1P /hdir/WCcopied.txt[1P /hdir/WCcopied.txth /hdir/WCcopied.txte /hdir/WCcopied.txtl /hdir/WCcopied.txtl /hdir/WCcopied.txto /hdir/WCcopied.txt[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pt[K[1Pt[C[K
+[?2004lput: `/Documents/aditya/hello': No such file or directory
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hchc[K[K[K[Kddcddcdd[K[K[K[K[K[K[K[Kcdccddc[K[K[K[K[K[K[Kdddcdc[K[K[K[K[K[Kdcdcdc[K[K[K[K[K[Kcdddcd[K[K[K[K[K[Kdcdcdcd[K[K[K[K[K[K[Khdfs dfs -put /Documents/aditya/hello /hdir/WCcopied[C[1@h[1@o[1@m[1P[1P[1P[1@H[1@o[1@m[1@e[1@/
+[?2004lput: `/Home/Documents/aditya/hello': No such file or directory
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hdfs dfs -put /Home/Documents/aditya/hello /hdir/WCcopied[1@h[1@a[1@d[1@o[1@o[1@p[1@/
+[?2004lput: `/Home/hadoop/Documents/aditya/hello': No such file or directory
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hdfs dfs -put /Home/hadoop/Documents/aditya/hello /hdir/WCcopied[1P[1@h[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004l[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ ^[[2~^?[K[K[K[K[Khdfs dfs -cat /hdir/cp[KW[K[KWWC[K[KCcopied
+[?2004lHii jhajhdbjhabchjcjacwdaCVQCSDDCHGS ASDFCD
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hdfs dfs -cat /hdir/WCcopied[K[K[K[K[K[K[K[K[K[K[K[K[Khoe/[K[K,[Kme/hadoop/Documents [K/hello
+[?2004lcat: `/home/hadoop/Documents/hello': No such file or directory
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hdfs dfs -cat /home/hadoop/Documents/helloahellodhelloihellothelloyhelloahello/hello
+[?2004lcat: `/home/hadoop/Documents/aditya/hello': No such file or directory
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hdfs dfs -cat /home/hadoop/Documents/aditya/hello[7Phello[14Pdir/WCcopied
+[?2004lHii jhajhdbjhabchjcjacwdaCVQCSDDCHGS ASDFCD
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hdfs -put /home/hadoop/Documents/aditya [K.[K/hello /hdir/WCC
+[?2004l/home/hadoop/hadoop/libexec/hadoop-functions.sh: line 2386: HDFS_-PUT_USER: invalid variable name
+ERROR: -put is not COMMAND nor fully qualified CLASSNAME.
+Usage: hdfs [OPTIONS] SUBCOMMAND [SUBCOMMAND OPTIONS]
+
+  OPTIONS is none or any of:
+
+--buildpaths                       attempt to add class files from build tree
+--config dir                       Hadoop config directory
+--daemon (start|status|stop)       operate on a daemon
+--debug                            turn on shell script debug mode
+--help                             usage information
+--hostnames list[,of,host,names]   hosts to use in worker mode
+--hosts filename                   list of hosts to use in worker mode
+--loglevel level                   set the log4j level for this command
+--workers                          turn on worker mode
+
+  SUBCOMMAND is one of:
+
+
+    Admin Commands:
+
+cacheadmin           configure the HDFS cache
+crypto               configure HDFS encryption zones
+debug                run a Debug Admin to execute HDFS debug commands
+dfsadmin             run a DFS admin client
+dfsrouteradmin       manage Router-based federation
+ec                   run a HDFS ErasureCoding CLI
+fsck                 run a DFS filesystem checking utility
+haadmin              run a DFS HA admin client
+jmxget               get JMX exported values from NameNode or DataNode.
+oev                  apply the offline edits viewer to an edits file
+oiv                  apply the offline fsimage viewer to an fsimage
+oiv_legacy           apply the offline fsimage viewer to a legacy fsimage
+storagepolicies      list/get/set/satisfyStoragePolicy block storage policies
+
+    Client Commands:
+
+classpath            prints the class path needed to get the hadoop jar and the required libraries
+dfs                  run a filesystem command on the file system
+envvars              display computed Hadoop environment variables
+fetchdt              fetch a delegation token from the NameNode
+getconf              get config values from configuration
+groups               get the groups which users belong to
+lsSnapshottableDir   list all snapshottable dirs owned by the current user
+snapshotDiff         diff two snapshots of a directory or diff the current directory contents with a snapshot
+version              print the version
+
+    Daemon Commands:
+
+balancer             run a cluster balancing utility
+datanode             run a DFS datanode
+dfsrouter            run the DFS router
+diskbalancer         Distributes data evenly among disks on a given node
+httpfs               run HttpFS server, the HDFS HTTP Gateway
+journalnode          run the DFS journalnode
+mover                run a utility to move block replicas across storage types
+namenode             run the DFS namenode
+nfs3                 run an NFS version 3 gateway
+portmap              run a portmap service
+secondarynamenode    run the DFS secondary namenode
+sps                  run external storagepolicysatisfier
+zkfc                 run the ZK Failover Controller daemon
+
+SUBCOMMAND may print help when invoked w/o parameters or with -h.
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hdfs -put /home/hadoop/Documents/aditya/hello /hdir/WCC[C[1@ [1@d[1@f[1@s[C[C[C[C
+[?2004l[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hdfs dfs -cat /hdir/WCC
+[?2004lHii jhajhdbjhabchjcjacwdaCVQCSDDCHGS ASDFCD
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hdfs dfs -get /hdir/WCC /hoe/[K[Kme/hadoop/Documents/aditya/hdir[K[K[K[Khee[Kllo1
+[?2004l[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hdfs dfs -getmerge /hdir/WCC/[K /hdir/Wc[KCcopied /home/hadoop/Documents/merge
+[?2004l[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hdfs dfs -getmerge /hdir/WCC /hdir/WCcopied /home/hadoop/Documents/mergeamergedmergeimergetmergeymergeamerge/merge
+[?2004l[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hadoop fs -getfacl /hdir/
+[?2004l# file: /hdir
+# owner: hadoop
+# group: supergroup
+user::rwx
+group::r-x
+other::r-x
+
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hdfs dfs -copyToLocal /hdir/WCC
+[?2004l[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hdfs dfs -copyToLocal /hdir/WCC /hoe[Kme/hadoop/Documents/aditya/hello2copytolocal_copytolocal
+[?2004l[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hdfs dfs -cat /hdir/WCC
+[?2004lHii jhajhdbjhabchjcjacwdaCVQCSDDCHGS ASDFCD
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hadoop fs -mv /hdir /FFF[K[K[K[K[K/FFF[K[K[K[K /FF
+[?2004l[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hdfs dfs [K[K[K[K[K[K[K[K[Khadoop fs -ls  [K/
+[?2004lFound 5 items
+drwxr-xr-x   - hadoop supergroup          0 2023-05-11 14:36 /FF
+drwxr-xr-x   - hadoop supergroup          0 2023-05-06 10:27 /abc
+drwxr-xr-x   - hadoop supergroup          0 2023-05-08 09:47 /abc123
+drwxr-xr-x   - hadoop supergroup          0 2023-05-04 13:00 /shabbu
+drwxr-xr-x   - hadoop supergroup          0 2023-05-06 10:34 /xyz
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hadoop fs -ls /mv /hdir /FFF
+[?2004lmv: `/hdir': No such file or directory
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hadoop fs -mv /hdir /FFFls /[Kmv /hdir /FF[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Khdfs dfs -cat /hdir/WCCopyToLocal /hdir/WCC /home/hadoop/Documents/aditya/hello2_copytolocal[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cat /hdir/WCC[K[Khadoop fs -ls /mv /hdir /FFF[K[K[KDS[K[KSSS
+[?2004lmv: `/hdir': No such file or directory
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hadoop fs -mv /hdir /SSS[K[K[KFF
+[?2004lmv: `/hdir': No such file or directory
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hadoop fs -mv /hdir /FF[1P /FF[1P /FF[1P /FF[1P /FFa /FFb /FFc /FF
+[?2004l[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hadoop fs -mv /abc /FF[1@hdir[C[C[C[CSSSFFFls /[K
+[?2004lFound 4 items
+drwxr-xr-x   - hadoop supergroup          0 2023-05-11 15:01 /FF
+drwxr-xr-x   - hadoop supergroup          0 2023-05-08 09:47 /abc123
+drwxr-xr-x   - hadoop supergroup          0 2023-05-04 13:00 /shabbu
+drwxr-xr-x   - hadoop supergroup          0 2023-05-06 10:34 /xyz
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hadoop fs -ls /FF
+[?2004lFound 3 items
+-rw-r--r--   1 hadoop supergroup         44 2023-05-11 14:36 /FF/WCC
+-rw-r--r--   1 hadoop supergroup         44 2023-05-11 14:21 /FF/WCcopied
+drwxr-xr-x   - hadoop supergroup          0 2023-05-06 10:27 /FF/abc
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hadoop fs -ls /FFF
+[?2004lls: `/FFF': No such file or directory
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hadoop fs -ls /FFF[K[K[Khdir
+[?2004lls: `/hdir': No such file or directory
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hadoop fs -ls /hdir[K[K[K[Kff[K[KFF/hdir
+[?2004lls: `/FF/hdir': No such file or directory
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hadoop fs -ls /FF/hdir[K[K[K[Kabc
+[?2004lFound 2 items
+-rw-r--r--   1 hadoop supergroup         26 2023-05-06 10:25 /FF/abc/hello1.txt
+-rw-r--r--   1 hadoop supergroup         26 2023-05-06 10:27 /FF/abc/hello2.txt
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hadoop fs -ls /FF/abc[K[K[KWCC
+[?2004l-rw-r--r--   1 hadoop supergroup         44 2023-05-11 14:36 /FF/WCC
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ hadoop fs -ls /FF/WCC[Kcopied
+[?2004l-rw-r--r--   1 hadoop supergroup         44 2023-05-11 14:21 /FF/WCcopied
+[?2004h]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ [K]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ [K]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ [K]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ [K]0;hadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC: ~[01;32mhadoop@bmscecse-HP-Elite-Tower-600-G9-Desktop-PC[00m:[01;34m~[00m$ ex[K[Kexit
+[?2004lexit
+
+Script done on 2023-05-11 15:52:44+05:30 [COMMAND_EXIT_CODE="0"]
